@@ -19,7 +19,11 @@ const CreateCharity = () => {
     _ownerAddress: "",
   });
 
-  const { runContractFunction: createCharity } = useWeb3Contract({
+  const {
+    runContractFunction: createCharity,
+    isFetching,
+    isLoading,
+  } = useWeb3Contract({
     abi: abi,
     contractAddress: charityAddress,
     functionName: "createCharity",
@@ -111,8 +115,13 @@ const CreateCharity = () => {
           <button
             type="submit"
             className="font-bold bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded"
+            disabled={isFetching || isLoading}
           >
-            Create
+            {isFetching || isLoading ? (
+              <div className=" animate-spin spinner-border w-8 h-8 border-b-2 rounded-full"></div>
+            ) : (
+              <div>Create</div>
+            )}
           </button>
         </form>
       </>
