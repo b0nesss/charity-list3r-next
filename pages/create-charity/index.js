@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+"use client";
+import React, { useState } from "react";
 import Header from "../../components/Header";
 import { contractAddresses, abi } from "../../constants";
 import { useWeb3Contract, useMoralis } from "react-moralis";
@@ -33,6 +34,10 @@ const CreateCharity = () => {
   };
 
   const handleSubmit = async (event) => {
+    let token = formData._name;
+    token = token.toLowerCase();
+    token = token.replace(" ", "_");
+    setformData((prev) => ({ ...prev, _tokenName: token }));
     event.preventDefault();
     await createCharity({
       onError: (err) => {
@@ -70,20 +75,6 @@ const CreateCharity = () => {
             id="_name"
             name="_name"
             value={formData._name}
-            onChange={handleChange}
-            className="shadow border mb-3"
-            required
-          />
-          <br />
-          <label htmlFor="_tokenName" className=" font-bold">
-            tokenName
-          </label>
-          <br />
-          <input
-            type="text"
-            id="_tokenName"
-            name="_tokenName"
-            value={formData._tokenName}
             onChange={handleChange}
             className="shadow border mb-3"
             required

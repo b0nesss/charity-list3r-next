@@ -7,6 +7,7 @@ import CharityList from "../components/CharityList";
 import { useWeb3Contract, useMoralis } from "react-moralis";
 import { contractAddresses, abi } from "../constants";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 export default function Home() {
   const { chainId: chainIdHex, isWeb3Enabled } = useMoralis();
   const chainId = parseInt(chainIdHex);
@@ -44,7 +45,6 @@ export default function Home() {
       },
     });
     const arr = Object.values(xx);
-    console.log(arr);
     setcharities(arr);
   }
 
@@ -65,13 +65,14 @@ export default function Home() {
       <Number number={number} />
       <div>
         {charities.map((charity, index) => (
-          <div key={index}>
+          <Link href={`/charity/${encodeURIComponent(charity[5])}`}>
             <CharityList
+              key={index}
               name={charity[3]}
               agenda={charity[6]}
               cred={charity[0]}
             />
-          </div>
+          </Link>
         ))}
       </div>
     </div>
