@@ -72,6 +72,7 @@ const CreateCharity = () => {
             value={formData._name}
             onChange={handleChange}
             className="shadow border mb-3"
+            required
           />
           <br />
           <label htmlFor="_tokenName" className=" font-bold">
@@ -85,6 +86,7 @@ const CreateCharity = () => {
             value={formData._tokenName}
             onChange={handleChange}
             className="shadow border mb-3"
+            required
           />
           <br />
           <label htmlFor="_agenda" className=" font-bold">
@@ -98,6 +100,7 @@ const CreateCharity = () => {
             value={formData._agenda}
             onChange={handleChange}
             className="shadow border mb-3"
+            required
           />
           <br />
           <label htmlFor="_ownerAddress" className=" font-bold">
@@ -111,6 +114,7 @@ const CreateCharity = () => {
             value={formData._ownerAddress}
             onChange={handleChange}
             className="shadow border mb-3"
+            required
           />
           <br />
           <button

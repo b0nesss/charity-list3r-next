@@ -4,7 +4,7 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/Header";
 import Number from "../components/Number";
 import CharityList from "../components/CharityList";
-import { useWeb3Contract, useMoralis, useERC20Balances } from "react-moralis";
+import { useWeb3Contract, useMoralis } from "react-moralis";
 import { contractAddresses, abi } from "../constants";
 import { useEffect, useState } from "react";
 export default function Home() {
@@ -44,6 +44,7 @@ export default function Home() {
       },
     });
     const arr = Object.values(xx);
+    console.log(arr);
     setcharities(arr);
   }
 
@@ -63,14 +64,15 @@ export default function Home() {
       <Header />
       <Number number={number} />
       <div>
-        {charities.map((charity, index) => {
-          <CharityList
-            key={index}
-            name={charity[3]}
-            agenda={charity[6]}
-            cred={charity[0]}
-          />;
-        })}
+        {charities.map((charity, index) => (
+          <div key={index}>
+            <CharityList
+              name={charity[3]}
+              agenda={charity[6]}
+              cred={charity[0]}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
