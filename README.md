@@ -1,34 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# Charity List3r
+
+This project was made during internal hackathon of BlocSoc IITR and it is the frontend of <a href="https://github.com/b0nesss/charity-web3">Charity List3r </a>.
+## Tools Used
+
+- This is a [Next.js](https://nextjs.org/) project. 
+- Tailwind CSS was used for styling of different pages.
+- Web3UIKit was used for the connect wallet component .
+- Metamask
+## Challenges faced
+- Integration of the backend and frontend in this project proved to be a significant challenge for us, given our limited experience with Next.js. However, we successfully overcame this obstacle within the given time constraints.
+- One of the major challenges we faced was parsing various data types or objects received from the backend. For example, we had to handle parsing of "bigNumber" data type when rendering ether amount. This proved to be a complex task that required careful handling and conversion.
+
+
+  
 
 ## Getting Started
 
+  
+
 First, run the development server:
 
+  
+
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/bhavi-b/charity-web3-next/tree/main
+npm install
+npm  run  dev
 ```
+
+  
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+  
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+  
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+You can watch a live demo of our platform by clicking on the following link: [video]( https://drive.google.com/file/d/1RmZL6MzLocWBYn98W27lbZxJT4kP_jDc/view?usp=drive_link).
+
+  
 
 ## Learn More
 
+  
+
 To learn more about Next.js, take a look at the following resources:
 
+  
+
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  
