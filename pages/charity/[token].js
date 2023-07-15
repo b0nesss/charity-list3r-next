@@ -148,7 +148,10 @@ const Page = () => {
           <h1 className=" text-2xl">{charity[3]}</h1>
           <h1>Credibility Score: {charity[1]}</h1>
           <h1>Agenda: {charity[6]}</h1>
-          <h1>Amount donated so far</h1>
+          <h1>
+            Amount donated so far
+            {charity[2]}
+          </h1>
           <input
             type="number"
             name="val"
