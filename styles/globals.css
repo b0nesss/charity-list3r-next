@@ -55,11 +55,6 @@ a {
   justify-self: center;
 }
 
-.Header_Create_charity{
-  align-self: center;
-  
-}
-
 .index_CharityContainer{
   /* max-width: 60vw; */
   /* margin: 0 20%; */
@@ -67,4 +62,13 @@ a {
   /* flex-shrink: 1; */
   justify-content: center;
   /* outline: 2px solid lightblue; */
+}
+
+.CreateCharity_formContainer{
+  margin: 0px 30% ;
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  background-color: antiquewhite;
+
 }

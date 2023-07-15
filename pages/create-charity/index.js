@@ -69,61 +69,63 @@ const CreateCharity = () => {
     return (
       <>
         <Header />
-        <form onSubmit={handleSubmit} className="mt-5 pl-5">
-          <label htmlFor="_name" className=" font-bold">
-            Name
-          </label>
-          <br />
-          <input
-            type="text"
-            id="_name"
-            name="_name"
-            value={formData._name}
-            onChange={handleChange}
-            className="shadow border mb-3"
-            required
-          />
-          <br />
-          <label htmlFor="_agenda" className=" font-bold">
-            Agenda
-          </label>
-          <br />
-          <textarea
-            type="text"
-            id="_agenda"
-            name="_agenda"
-            value={formData._agenda}
-            onChange={handleChange}
-            className="shadow border mb-3"
-            required
-          />
-          <br />
-          <label htmlFor="_ownerAddress" className=" font-bold">
-            Owner Address
-          </label>
-          <br />
-          <input
-            type="text"
-            id="_ownerAddress"
-            name="_ownerAddress"
-            value={formData._ownerAddress}
-            onChange={handleChange}
-            className="shadow border mb-3"
-            required
-          />
-          <br />
-          <button
-            type="submit"
-            className="font-bold bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded"
-            disabled={isFetching || isLoading}
-          >
-            {isFetching || isLoading ? (
-              <div className=" animate-spin spinner-border w-8 h-8 border-b-2 rounded-full"></div>
-            ) : (
-              <div>Create</div>
-            )}
-          </button>
-        </form>
+        <div className="CreateCharity_formContainer">
+          <form onSubmit={handleSubmit} className="mt-5 pl-5">
+            <label htmlFor="_name" className=" font-bold">
+              Name Your Charity:
+            </label>
+            <br />
+            <input
+              type="text"
+              id="_name"
+              name="_name"
+              value={formData._name}
+              onChange={handleChange}
+              className="shadow border mb-3"
+              required
+            />
+            <br />
+            <label htmlFor="_agenda" className=" font-bold">
+              Agenda Of You Charity:
+            </label>
+            <br />
+            <textarea
+              type="text"
+              id="_agenda"
+              name="_agenda"
+              value={formData._agenda}
+              onChange={handleChange}
+              className="shadow border mb-3"
+              required
+            />
+            <br />
+            <label htmlFor="_ownerAddress" className=" font-bold">
+              Address to share your Funds to:
+            </label>
+            <br />
+            <input
+              type="text"
+              id="_ownerAddress"
+              name="_ownerAddress"
+              value={formData._ownerAddress}
+              onChange={handleChange}
+              className="shadow border mb-3"
+              required
+            />
+            <br />
+            <button
+              type="submit"
+              className="font-bold bg-blue-400 hover:bg-blue-500 text-white py-2 px-4 rounded"
+              disabled={isFetching || isLoading}
+            >
+              {isFetching || isLoading ? (
+                <div className=" animate-spin spinner-border w-8 h-8 border-b-2 rounded-full"></div>
+              ) : (
+                <div>Create</div>
+              )}
+            </button>
+          </form>
+        </div>
       </>
     );
   } else {

@@ -58,24 +58,27 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Charity DAO</title>
+        <title>Charity List3r</title>
         <meta name="description" content="A charity dao" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <Number number={number} />
-      <div>
-        {charities.map((charity, index) => (
-          <div key={index}>
-            <Link href={`/charity/${encodeURIComponent(charity[5])}`}>
-              <CharityList
-                name={charity[3]}
-                agenda={charity[6]}
-                cred={charity[1]}
-              />
-            </Link>
-          </div>
-        ))}
+
+      <div className="index_CharityContainer">
+        <div className="index_CharityCardContainer">
+          {charities.map((charity, index) => (
+            <div key={index}>
+              <Link href={`/charity/${encodeURIComponent(charity[5])}`}>
+                <CharityList
+                  name={charity[3]}
+                  agenda={charity[6]}
+                  cred={charity[1]}
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

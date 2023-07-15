@@ -135,23 +135,45 @@ const Page = () => {
   return (
     <>
       <Header />
-      <div className="flex flex-row">
+      <div className="flex flex-row gap-10">
         <div className=" flex-auto">
           <h1 className="text-2xl ml-2">Current Donors</h1>
-          {donors.map((donor, index) => (
-            <h1 key={index} className=" mt-2 ml-2">
-              {donor[2].toString()} {ethers.utils.formatEther(donor[1])} ETH
-            </h1>
-          ))}
+          <div class="relative overflow-x-auto">
+            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+              <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <th scope="col" class="px-6 py-3">
+                    Address
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Donated Amount
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {donors.map((donor, index) => (
+                  <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                    <th
+                      scope="row"
+                      class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      {donor[2].toString()}
+                    </th>
+                    <td class="px-6 py-4">
+                      {ethers.utils.formatEther(donor[1])}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
         <div className=" flex-auto">
           <h1 className=" text-2xl">{charity[3]}</h1>
           <h1>Credibility Score: {charity[1]}</h1>
           <h1>Agenda: {charity[6]}</h1>
-          <h1>
-            Amount donated so far
-            {charity[2]}
-          </h1>
+          {/* {console.log(charity.credibility)} */}
+          {/* <h1>Amount Raised: </h1> */}
           <input
             type="number"
             name="val"
